@@ -4,10 +4,10 @@
 
 void print_list(struct node* cur){
   if(cur -> next){
-    printf("%d, ",cur-> i);
+    printf("%d, ",cur -> i);
     print_list(cur -> next);
   }else{
-    printf("%d\n",cur -> i);
+    printf("%d\n", cur -> i);
   }
 }
 
@@ -20,11 +20,10 @@ struct node* insert_front(struct node* cur, int val){
 }
 
 struct node* free_list(struct node* cur){
-  struct node* first = cur;
-  while(cur -> next){
-    free(cur);
-    cur = cur -> next;
+  if(cur -> next){
+    free_list(cur -> next);
   }
+  struct node* first = cur;
   free(cur);
   return first;
 }
