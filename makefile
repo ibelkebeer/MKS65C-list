@@ -1,5 +1,7 @@
 all: tester.o linkedlist.o
 	gcc tester.o
+
+run: a.out
 	./a.out
 
 linkedlist.o: linkedlist.c
