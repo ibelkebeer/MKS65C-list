@@ -9,5 +9,6 @@ int main(){
   print_list(n1);
   printf("Current list, 3 nodes with vals = 20, 10, and 5 respectively: ");
   print_list(insert_front(insert_front(n1, 10), 20));
+  printf("Current list after free_list: ");
   print_list(free_list(n1));
 }
